@@ -1,0 +1,1 @@
+This is a basic game of rock, paper, scissors played in the browser. There are no graphics, and the result determination outputs to the console. The console can be accessed by right clicking anywhere on the page, selecting "inspect element", then clicking on the console tab in the window that opens. This iteration plays a single round. To play another round, refresh the page.
