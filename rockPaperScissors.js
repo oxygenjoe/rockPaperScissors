@@ -44,4 +44,11 @@ function playRound(){
     console.log("You Lose!");
   }
 }
-playRound();
+function game(){
+  i = 0;
+  while (i < 5){
+    playRound();
+    i++;
+  }
+  }
+  game();
