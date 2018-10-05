@@ -32,12 +32,16 @@ function playerPlay(){
 function playRound(){
   computerPlay();
   playerPlay();
-  if (playerSelection == rock && computerSelection == scissors || playerSelection == scissors && computerSelection == paper || playerSelection == paper && computerSelection == rock){
+  if (playerSelection == rock && computerSelection == scissors){
     console.log("You win!");
+  } else if((playerSelection == scissors && computerSelection == paper)){
+    console.log("You win!");
+  } else if((playerSelection == paper && computerSelection == rock)){
+    console.log("You Win!");
   } else if (playerSelection == computerSelection) {
     console.log("It's a Draw! Play another round!");
   } else {
-    console.log("You lose!");
+    console.log("You Lose!");
   }
-  }
-  playRound();
+}
+playRound();
