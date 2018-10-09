@@ -1,9 +1,19 @@
 let rock = "rock";
 let paper = "paper";
 let scissors = "scissors";
-let playerInput = prompt("Choose rock, paper, or scissors.")
 let playerSelection = null;
 let computerSelection = null;
+let i = 1;
+let compCounter = 1;
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    playerSelection = button.id;
+    computerPlay();
+    playRound();
+});
+});
 
 function computerPlay(){
   let picker = Math.floor(Math.random() * 10);
@@ -16,39 +26,21 @@ function computerPlay(){
   }
   return computerSelection;
 }
-
-function playerPlay(){
-  let playerSel = playerInput.toUpperCase();
-  if (playerSel.match(/ROCK/i)){
-    playerSelection = rock;
-  } else if (playerSel.match(/PAPER/i)){
-    playerSelection = paper;
-  } else if (playerSel.match(/SCISSORS/i)){
-    playerSelection = scissors;
-  }
-  return playerSelection;
-  }
-
 function playRound(){
   computerPlay();
-  playerPlay();
   if (playerSelection == rock && computerSelection == scissors){
-    console.log("You win!");
+    document.getElementById("resultOutput").innerHTML = "You win!";
+    document.getElementById("playerWinCounter").innerHTML = "Your Score: " + i++;
   } else if((playerSelection == scissors && computerSelection == paper)){
-    console.log("You win!");
+    document.getElementById("resultOutput").innerHTML = "You win!";
+    document.getElementById("playerWinCounter").innerHTML = "Your Score: " + i++;
   } else if((playerSelection == paper && computerSelection == rock)){
-    console.log("You Win!");
+    document.getElementById("resultOutput").innerHTML = "You win!";
+    document.getElementById("playerWinCounter").innerHTML = "Your Score: " + i++;
   } else if (playerSelection == computerSelection) {
-    console.log("It's a Draw! Play another round!");
+    document.getElementById("resultOutput").innerHTML = "It's a Draw! Play another round, unless you're a filthy Commie!";
   } else {
-    console.log("You Lose!");
+    document.getElementById("resultOutput").innerHTML = "You Lose!";
+    document.getElementById("computerWinCounter").innerHTML =  "Your Opponent's Score: " +  compCounter++;
   }
 }
-function game(){
-  i = 0;
-  while (i < 5){
-    playRound();
-    i++;
-  }
-  }
-  game();

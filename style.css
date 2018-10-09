@@ -1,0 +1,22 @@
+body{
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-family:arial;
+  text-align: center;
+  height: ight:100svh;
+}
+h1{
+  width: 99%;
+  margin:auto;;
+}
+
+button {
+  background-color: white;
+}
+button:focus {
+  outline-width: 0;
+}
